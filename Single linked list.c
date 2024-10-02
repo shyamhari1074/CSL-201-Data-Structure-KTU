@@ -183,9 +183,12 @@ int main() {
                 printf("\nSelect Position\n1: Front\n2: End\n3: Between Nodes\nChoice: ");
                 scanf("%d", &s);
                 switch (s) {
-                    case 1: Insert_Begin(); break;  // Insert at the front
-                    case 2: Insert_End(); break;    // Insert at the end
-                    case 3: Insert_AnyPos(); break; // Insert at a specific position
+                    case 1: Insert_Begin();
+                        break;  // Insert at the front
+                    case 2: Insert_End();
+                        break;    // Insert at the end
+                    case 3: Insert_AnyPos();
+                        break; // Insert at a specific position
                     default: printf("Wrong Input\n");
                 }
                 break;
@@ -194,9 +197,12 @@ int main() {
                 printf("\nSelect Position\n1: Front\n2: End\n3: Between Nodes\nChoice: ");
                 scanf("%d", &s);
                 switch (s) {
-                    case 1: Delete_Begin(); break;  // Delete from the front
-                    case 2: Delete_End(); break;    // Delete from the end
-                    case 3: Delete_AnyPos(); break; // Delete a specific node
+                    case 1: Delete_Begin();
+                        break;  // Delete from the front
+                    case 2: Delete_End();
+                        break;    // Delete from the end
+                    case 3: Delete_AnyPos();
+                        break; // Delete a specific node
                     default: printf("Wrong Input\n");
                 }
                 break;
