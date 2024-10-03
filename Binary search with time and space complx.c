@@ -1,5 +1,4 @@
 #include <stdio.h>
-hghghghghghghghhghg
 int main() {
     int n, i, key, left, right, mid, space = 0, count = 0;
     space = 8 * sizeof(int); // 8 integers for variables
