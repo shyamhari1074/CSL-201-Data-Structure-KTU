@@ -6,7 +6,7 @@ struct Node {
     int Data; // Data field to store the stack element
     struct Node* next; // Pointer to the next node
 };
-
+D
 struct Node* head = NULL; // Initialize the head pointer to NULL (empty stack)
 
 // Function to create a new node with the given data
