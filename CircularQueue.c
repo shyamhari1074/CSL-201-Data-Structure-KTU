@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define SIZE 3 // Fixed queue size of 3dkdkdkdkdkdkd
+#define SIZE 3 // Fixed queue size of 3
 int front = -1, rear = -1, cq[SIZE];
 
 void enqueue(int item) {
