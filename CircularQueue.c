@@ -11,8 +11,9 @@ void enqueue(int item) {
     } else {
         if (front == -1 && rear == -1) {
             front = 0; // Initialize front and rear for the first element
-        }
-        rear = (rear + 1) % SIZE; // Move rear to the next position
+        }else{
+        rear = (rear + 1) % SIZE; 
+        }// Move rear to the next position
         cq[rear] = item; // Insert item
         printf("%d successfully inserted\n", item);
     }
