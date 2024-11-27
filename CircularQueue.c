@@ -1,77 +1,72 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-
-#define SIZE 3 // Fixed queue size of 3
-int front = -1, rear = -1, cq[SIZE];
-
-void enqueue(int item) {
-    if ((rear + 1) % SIZE == front) {
-        printf("Queue overflow\n");
-    } else {
-        if (front == -1 && rear == -1) {
-            front = 0; // Initialize front and rear for the first element
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#define Size 3
+int front =-1,rear=-1;
+int cq[Size],item;
+void enq(){
+    if((rear +1)%Size==front){
+        printf("THe cq is full");
+    }else{
+        printf("Enter the element");
+        scanf("%d",&item);
+        if(front==-1 ){
+            front=0;
+            rear=0;
         }else{
-        rear = (rear + 1) % SIZE; 
-        }// Move rear to the next position
-        cq[rear] = item; // Insert item
-        printf("%d successfully inserted\n", item);
+            rear=(rear +1)%Size;
+        }
+        cq[rear]=item;
+        
     }
 }
-
-void dequeue() {
-    if (front == -1 && rear == -1) {
-        printf("Queue underflow\n");
-    } else {
-        printf("%d successfully deleted\n", cq[front]);
-        cq[front] = 0; // Clear the position
-        if (front == rear) { // Queue becomes empty
-            front = -1;
-            rear = -1;
-        } else {
-            front = (front + 1) % SIZE; // Move front to the next position
-        }
+void deq(){
+    if(front==-1 && rear==-1){
+        printf("THe cq is empty");
+    }else{
+        if(front==rear){
+            front=-1;
+            rear==-1;
+        }else{
+            cq[front]=0;
+        front=(front+1)%Size;
     }
+}}
+void display()
+{
+if(front==-1&&rear==-1)
+printf("Queue underflow\n");
+else
+{
+   printf("Queue elements:\n");
+   
+for(int i=0;i<Size;i++)
+{
+    if(cq[i]==00)
+printf("_\t");
+else
+printf("%d\t",cq[i]);
+
+}
+}
 }
 
-void display() {
-    if (front == -1 && rear == -1) {
-        printf("Queue is empty\n");
-    } else {
-        printf("Queue elements:\n");
-        int i = front;
-        while (true) {
-            printf("%d\t", cq[i]);
-            if (i == rear) break; // Break if we've reached the rear
-            i = (i + 1) % SIZE; // Circular increment
+int main(){
+    int choice;
+    do{
+        printf("\n1.Enqueue\n2.dequeue\n3.Display\n4.Exit\nEnter your choice ==");
+        scanf("%d",&choice);
+        switch(choice){
+            case 1: enq();
+            break;
+            case 2: deq();
+            break;
+            case 3: display();
+            break;
+            case 4: exit(0);
+            break;
+            default : printf("U DUMB FEllow");
+            break;
         }
-        printf("\n");
-    }
-}
-
-int main() {
-    int item, choice;
-    do {
-        printf("\n1. Enqueue\n2. Dequeue\n3. Display queue elements\n4. Exit\nEnter your choice:\n");
-        scanf("%d", &choice);
-        switch (choice) {
-            case 1:
-                printf("Enter element to be inserted: ");
-                scanf("%d", &item);
-                enqueue(item);
-                break;
-            case 2:
-                dequeue();
-                break;
-            case 3:
-                display();
-                break;
-            case 4:
-                printf("\nExiting...\n");
-                exit(0);
-            default:
-                printf("Invalid choice, please try again.\n");
-        }
-    } while (true);
-    return 0; // Return statement for main
+    }while(1);
 }
